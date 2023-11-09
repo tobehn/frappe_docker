@@ -19,4 +19,11 @@ services:
 
 volumes:
   redis-cache-data:
+    name: ${PROJECT_NAME}_redis-cache-data
+    external: true
   redis-queue-data:
+    name: ${PROJECT_NAME}_redis-queue-data
+    external: true
+  redis-socketio-data:
+    name: ${PROJECT_NAME}_redis-socketio-data
+    external: true

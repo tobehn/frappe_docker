@@ -70,11 +70,11 @@ services:
 
   queue-short:
     <<: *backend_defaults
-    command: bench worker --queue short,default
+    command: bench worker --queue short
 
   queue-long:
     <<: *backend_defaults
-    command: bench worker --queue long,default,short
+    command: bench worker --queue long
 
   scheduler:
     <<: *backend_defaults
@@ -83,3 +83,5 @@ services:
 # ERPNext requires local assets access (Frappe does not)
 volumes:
   sites:
+    name: ${PROJECT_NAME}_sites
+    external: true
